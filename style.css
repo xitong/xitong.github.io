@@ -1,3 +1,8 @@
+div#name img{
+  width: 200px;
+  height: 132px;
+}
+
 table#contact{
   border: 0px;
 }
