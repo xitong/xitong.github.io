@@ -1,0 +1,32 @@
+table#contact{
+  border: 0px;
+}
+
+table#contact tr{
+  height: 32px;
+}
+
+table#contact td.attr{
+  text-align: right;;
+  font-weight: bold;
+  width: 15%;
+}
+
+table#contact td.value{
+  text-align: left;
+}
+
+span.me{
+  font-weight: bold;
+}
+
+span.paper{
+}
+
+span.proceeding{
+  font-style: italic;
+}
+
+span.proc-abbr{
+  font-weight: bold;
+}
