@@ -1,12 +1,5 @@
-@media all and (max-width: 400px) {
-  h1{
-    font-size: 32px;
-  }
-}
-
 div#name img{
-  width: 198px;
-  height: 132px;
+  height: 200px;
 }
 
 table#contact{
@@ -14,7 +7,8 @@ table#contact{
 }
 
 table#contact tr{
-  height: 32px;
+  height: 50px;
+  font-size: 1.15em;
 }
 
 table#contact td.attr{
@@ -40,5 +34,16 @@ span.proceeding{
 
 span.proc-abbr{
   font-weight: bold;
+}
+
+@media all and (max-width: 400px) {
+  h1{
+    font-size: 32px;
+  }
+
+  table#contact tr{
+    height: 32px;
+    font-size: 1.0em;
+  }
 }
 
