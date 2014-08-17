@@ -1,5 +1,9 @@
+div#wrapper{
+  margin-top: 20px;
+}
+
 div#photo img{
-  height: 140px;
+  height: 180px;
 }
 
 table#contact{
@@ -7,7 +11,7 @@ table#contact{
 }
 
 table#contact tr{
-  height: 35px;
+  height: 30px;
   font-size: 1.1em;
 }
 
