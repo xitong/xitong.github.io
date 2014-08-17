@@ -1,5 +1,5 @@
-div#name img{
-  height: 200px;
+div#photo img{
+  height: 140px;
 }
 
 table#contact{
@@ -7,8 +7,8 @@ table#contact{
 }
 
 table#contact tr{
-  height: 50px;
-  font-size: 1.15em;
+  height: 35px;
+  font-size: 1.1em;
 }
 
 table#contact td.attr{
