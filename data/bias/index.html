@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Supplemental Dataset</title>
+  <meta name="description" content="">
+
+  <link rel="stylesheet" href="/~xliu/data/bias//css/main.css">
+  <link rel="canonical" href="http://www.eecis.udel.edu//~xliu/data/bias//">
+  <link rel="alternate" type="application/rss+xml" title="Web Search Bias Data" href="http://www.eecis.udel.edu//~xliu/data/bias//feed.xml" />
+</head>
+
+
+  <body>
+
+    <header class="site-header">
+
+  <div class="wrapper">
+
+    <a class="site-title" href="/~xliu/data/bias//">Web Search Bias Data</a>
+
+    <nav class="site-nav">
+      <a href="#" class="menu-icon">
+        <svg viewBox="0 0 18 15">
+          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </a>
+
+      <div class="trigger">
+        
+          
+          <a class="page-link" href="/~xliu/data/bias//">Supplemental Dataset</a>
+          
+        
+          
+        
+      </div>
+    </nav>
+
+  </div>
+
+</header>
+
+
+    <div class="page-content">
+      <div class="wrapper">
+        <div class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">Supplemental Dataset</h1>
+  </header>
+
+  <article class="post-content">
+    <p>This site provides the data set along with our ICTIR paper: Towards Less
+Biased Web Search.</p>
+
+<h3 id="query">Query</h3>
+<p>There are 50 queries in the data set. Here is the snippet from the query file
+<code>query/raw</code>:</p>
+
+<pre><code>22 : is congestive heart failure a heart attack
+23 : can aspirin cause blood in urine
+25 : can flonase make you tired
+26 : can i take carnitine while pregnant
+27 : does robaxin show up on drug test
+...
+</code></pre>
+
+<p>Each record is divided by <code>:</code> into two columns:</p>
+
+<ul>
+  <li>query ID</li>
+  <li>query in plain text</li>
+</ul>
+
+<p>The expanded query is also provided for segment ranking. Possible synonyms of
+entities (e.g., medicines with different brand and chemical names) are
+appended to the original query. Examples from <code>query/exp</code>:</p>
+
+<pre><code>27 : does robaxin show up on drug test Methocarbamol
+35 : does crestor raise blood sugar Rosuvastatin
+</code></pre>
+
+<h3 id="cralwed-web-documents">Cralwed Web documents</h3>
+<p>For each query, we have crawled top 20 results on both Bing and Google. We
+follow the URL in the top 20 results to fetch Web documents accordingly. All
+the data could be found in <code>crawl</code> directory. The document ranking results
+are available at <code>rank</code> sub-directory. For example, file <code>crawl/google/rank/23</code>
+specifies the document ranking at the time of crawl (02/2015) from Google:</p>
+
+<pre><code>1 http://www.mayoclinic.org/diseases-conditions/blood-in-urine/basics/definition/con-20032338
+2 http://consumer.healthday.com/encyclopedia/first-aid-and-emergencies-20/emergencies-and-first-aid-news-227/blood-in-the-urine-644311.html
+3 http://www.urologyhealth.org/content/moreinfo/hematuria.pdf
+4 http://www.drugs.com/health-guide/hematuria.html
+...
+</code></pre>
+
+<p>Each record is divided by space into two columns:</p>
+
+<ul>
+  <li>rank</li>
+  <li>URL</li>
+</ul>
+
+<p>The original HTML documents can be found at the <code>fetch</code> sub-directory. For
+example, you may find all the top 20 documents for query 23 at
+<code>crawl/google/fetch/23/</code>. Each file is named as <code>RANK.html</code> where RANK is the 
+original rank of the document.</p>
+
+<p><strong>Note</strong>: some documents may not be available (e.g., 404 Not Found) at
+the time of retrieval, therefore for some queries we have less than 20
+documents from one search engine.</p>
+
+<p>The mappings between URL and document ID are specified at
+<code>crawl/url.map</code>. For example:</p>
+
+<pre><code>23 023-GOOG-0001 http://www.mayoclinic.org/diseases-conditions/blood-in-urine/basics/definition/con-20032338
+23 023-GOOG-0002 http://consumer.healthday.com/encyclopedia/first-aid-and-emergencies-20/emergencies-and-first-aid-news-227/blood-in-the-urine-644311.html
+23 023-GOOG-0003 http://www.urologyhealth.org/content/moreinfo/hematuria.pdf
+23 023-GOOG-0004 http://www.drugs.com/health-guide/hematuria.html
+</code></pre>
+
+<p>Each record is divided by space into three columns:</p>
+
+<ul>
+  <li>query ID</li>
+  <li>document ID</li>
+  <li>URL</li>
+</ul>
+
+<p><strong>Note</strong>: Duplicate URLs from Bing and Google search results would be 
+mapped to one unique document ID.</p>
+
+<h3 id="qrels-ground-truth">QRELS (Ground Truth)</h3>
+<pre><code>22 022-GOOG-0019 1 0 -1
+22 022-GOOG-0020 1 1 1
+22 022-GOOG-0010 1 0 3
+...
+23 023-GOOG-0007 1 1 3
+23 023-GOOG-0004 1 1 1
+...
+</code></pre>
+
+<p>Each record is divided by <code>:</code> into five columns:</p>
+
+<ul>
+  <li>query ID</li>
+  <li>document ID</li>
+  <li>flag for judgment status of document (1 for judged, 0 otherwise)</li>
+  <li>flag for document relevance (1 for relevant, 0 otherwise)</li>
+  <li>flag for document polarity (1 means support, 3 means disapproval, -1 means unknown for 
+un-judged documents)</li>
+</ul>
+
+<h3 id="citation">Citation</h3>
+<p>For citation, please use the following bibtex:</p>
+
+<pre><code>@inproceedings{Liu:2015,
+  title = {Towards Less Biased Web Search},
+  author = {Liu, Xitong and Fang, Hui and Cai, Deng},
+  booktitle = {ICTIR},
+  year = {2015},
+}
+</code></pre>
+
+<h3 id="download">Download</h3>
+<p>The data set could be downloaded as a single <a href="bias.tar.gz">tar ball</a>.</p>
+
+
+  </article>
+
+</div>
+
+      </div>
+    </div>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Web Search Bias Data</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col  footer-col-1">
+        <ul class="contact-list">
+          <li>Contact</li>
+          <li><a href="../../">Xitong Liu</a>: xtliu[at]udel.edu</li>
+        </ul>
+      </div>
+
+      <div class="footer-col  footer-col-2">
+        <ul class="social-media-list">
+          
+
+          
+        </ul>
+      </div>
+
+      <div class="footer-col  footer-col-3">
+        <p class="text"></p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+
+
+  </body>
+
+</html>
