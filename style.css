@@ -3,7 +3,7 @@ div#wrapper{
 }
 
 div#photo img{
-  height: 180px;
+  width: 300px;
 }
 
 table#contact{
