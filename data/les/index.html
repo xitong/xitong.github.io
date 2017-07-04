@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Dataset</title>
+  <meta name="description" content=".">
+
+  <link rel="stylesheet" href="/data/les/assets/main.css">
+  <link rel="canonical" href="/data/les/">
+  <link rel="alternate" type="application/rss+xml" title="Latent Entity Space" href="/data/les/feed.xml">
+  
+  
+</head>
+
+
+  <body>
+
+    <header class="site-header" role="banner">
+
+  <div class="wrapper">
+    
+    
+    <a class="site-title" href="/data/les/">Latent Entity Space</a>
+  
+    
+      <nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+              <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+              <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger">
+          
+            
+            
+          
+            
+            
+            <a class="page-link" href="/data/les/">Dataset</a>
+            
+          
+            
+            
+          
+            
+            
+          
+        </div>
+      </nav>
+    
+  </div>
+</header>
+
+
+    <main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">Dataset</h1>
+  </header>
+
+  <div class="post-content">
+    <p>This page provides the data sets used in our IRJ paper: Latent Entity Space:
+A Novel Retrieval Approach for Entity-Bearing Queries.</p>
+
+<p>Four data sets are provided in total:</p>
+
+<ul>
+  <li>94: 94 queries with FACC entity annotation from TREC 2009 to 2012 Web track.</li>
+  <li>eqfe: 191 queries with FACC entity annotation from <a href="http://ciir.cs.umass.edu/downloads/eqfe/">Entity Query Feature
+Expansion</a>.</li>
+  <li>2013: 50 queries with manual entity annotation from TREC 2013 Web Track.</li>
+  <li>2014: 50 queries with manual entity annotation from TREC 2014 Web Track.</li>
+</ul>
+
+<p>Each query set includes queries, qrels and retrieval run files reported in the
+paper:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>├── eval
+│   ├── gdeval.pl
+│   └── qrels
+├── query
+│   └── qent.map
+└── ret
+    ├── les-col
+    └── les-fb
+</code></pre>
+</div>
+
+<h3 id="query">Query</h3>
+<p><code class="highlighter-rouge">qent.map</code> includes the entity annotations in the query:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>201 : /m/0gmg36g : Raspberry Pi
+202 : /m/01c16w : USS Carl Vinson (CVN-70)
+203 : /m/0h51_mt : Les Miserables
+204 : /m/037hz : Golf
+205 : /m/02pqcrl : Charity
+...
+</code></pre>
+</div>
+
+<p>Each record is divided by <code class="highlighter-rouge">:</code> into three columns:</p>
+
+<ul>
+  <li>query ID</li>
+  <li>Freebase MID</li>
+  <li>Surface text in the query</li>
+</ul>
+
+<p><strong>Note</strong>:</p>
+<ul>
+  <li>One query may have multiple entity mappings.</li>
+  <li>The original queries can be obtained from
+<a href="http://trec.nist.gov/data/webmain.html">TREC</a>.</li>
+</ul>
+
+<h3 id="run-files">Run files</h3>
+<p><code class="highlighter-rouge">les-col</code> is the run file from Latent Entity Space model with entity profile
+estimated based on document collection, and <code class="highlighter-rouge">les-fb</code> is the run file with entity
+profile estimated from Freebase.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>201 Q0 clueweb12-0900tw-63-01604 1 996.300000 les_intep
+201 Q0 clueweb12-1700tw-60-14505 2 993.300000 les_intep
+201 Q0 clueweb12-1600tw-25-03206 3 992.900000 les_intep
+...
+</code></pre>
+</div>
+
+<p>Each record is divided by space into three columns:</p>
+
+<ul>
+  <li>query ID</li>
+  <li>Q0, reserved</li>
+  <li>document ID</li>
+  <li>document rank</li>
+  <li>document score</li>
+  <li>run ID</li>
+</ul>
+
+<p><strong>Note</strong>:</p>
+<ul>
+  <li>For each query, only 20 results are returned, as the evaluation metrics
+estimate relevance at top 20.</li>
+  <li>The retrieval score is for ranking only and do not bear any semantic meaning.</li>
+</ul>
+
+<h3 id="qrels-ground-truth">QRELS (Ground Truth)</h3>
+<p><code class="highlighter-rouge">qrels</code> is the Qref file retrieved from <a href="http://trec.nist.gov/data/webmain.html">TREC official data
+release</a>.
+<code class="highlighter-rouge">gdeval.pl</code> is the evaluation script which reports nDCG@20 and ERR@20.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>201 0 clueweb12-0000tw-05-12114 1
+201 0 clueweb12-0000wb-30-01951 0
+201 0 clueweb12-0000wb-60-01497 1
+...
+202 0 clueweb12-0001wb-27-33452 0
+202 0 clueweb12-0002wb-14-02885 0
+...
+</code></pre>
+</div>
+
+<p>Each record is divided by <code class="highlighter-rouge">:</code> into five columns:</p>
+
+<ul>
+  <li>query ID</li>
+  <li>0, reserved</li>
+  <li>document ID</li>
+  <li>flag for document relevance</li>
+</ul>
+
+<h3 id="citation">Citation</h3>
+<p>For citation, please use the following bibtex:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>@article{Liu:2015,
+  title = "{Latent Entity Space: A Novel Retrieval Approach for Entity-Bearing Queries}",
+  author = {Liu, Xitong and Fang, Hui},
+  journal = {Information Retrieval},
+  volume={18},
+  number={6},
+  pages={473--503},
+  year = {2015},
+}
+</code></pre>
+</div>
+
+<h3 id="download">Download</h3>
+<p>The data set could be downloaded as a single <a href="les.tar.gz">tar ball</a>.</p>
+
+  </div>
+
+</article>
+
+      </div>
+    </main>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Latent Entity Space</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li>
+            
+              Latent Entity Space
+            
+            </li>
+            
+            <li><a href="mailto:me [at] xtliu.com">me [at] xtliu.com</a></li>
+            
+        </ul>
+      </div>
+
+      <div class="footer-col footer-col-2">
+        <ul class="social-media-list">
+          
+
+          
+        </ul>
+      </div>
+
+      <div class="footer-col footer-col-3">
+        <p>.</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+
+
+  </body>
+
+</html>
