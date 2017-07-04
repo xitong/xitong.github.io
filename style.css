@@ -6,6 +6,13 @@ div#photo img{
   width: 300px;
 }
 
+a.highlight {
+  border-radius: 3px;
+  background-color: #0000ff;
+  color: #ffffff;
+  padding: 2px 5px;
+}
+
 table#contact{
   border: 0px;
 }
@@ -50,4 +57,3 @@ span.proc-abbr{
     font-size: 1.0em;
   }
 }
-
