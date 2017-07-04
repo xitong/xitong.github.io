@@ -1,0 +1,7 @@
+@inproceedings{Liu:2012,
+  title = "{Entity Centric Query Expansion for Enterprise Search}",
+  author = {Xitong Liu and Hui Fang and Fei Chen and Min Wang},
+  booktitle = {CIKM},
+  pages ={1955--1959},
+  year = {2012},
+}

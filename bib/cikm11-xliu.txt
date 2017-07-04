@@ -1,0 +1,7 @@
+@inproceedings{Liu:2011,
+  title = "{Finding Relevant Information of Certain Types from Enterprise Data}",
+  author = {Xitong Liu and Hui Fang and Cong-Lei Yao and Min Wang},
+  booktitle = {CIKM},
+  pages ={47--56},
+  year = {2011},
+}

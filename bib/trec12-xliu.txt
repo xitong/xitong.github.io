@@ -1,0 +1,6 @@
+@inproceedings{Liu:2012,
+  title = "{Entity Profile based Approach in Automatic Knowledge Finding}",
+  author = "Xitong Liu and Hui Fang",
+  booktitle = "Proceedings of TREC",
+  year = 2012,
+}

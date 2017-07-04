@@ -1,0 +1,9 @@
+@article{Liu:2013,
+  title = "{An Exploration of Ranking Models and Feedback Method for Related Entity Finding}",
+  author = {Liu, Xitong and Zheng, Wei and Fang, Hui},
+  journal = {Information Processing & Management},
+  volume={49},
+  number={5},
+  pages={995--1007},
+  year = {2013},
+}

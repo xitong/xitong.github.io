@@ -1,0 +1,9 @@
+@article{Liu:2015,
+  title = "{Latent Entity Space: A Novel Retrieval Approach for Entity-Bearing Queries}",
+  author = {Liu, Xitong and Fang, Hui},
+  journal = {Information Retrieval},
+  volume={18},
+  number={6},
+  pages={473--503},
+  year = {2015},
+}

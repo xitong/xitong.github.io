@@ -1,0 +1,6 @@
+@inproceedings{Liu-WebKR:2013,
+  title = "{Leveraging Related Entities for Knowledge Base Acceleration}",
+  author = {Liu, Xitong and Fang, Hui},
+  booktitle = {4th International Workshop on Web-scale Knowledge Representation, Retrieval, and Reasoning (Web-KR)},
+  year = {2013},
+}

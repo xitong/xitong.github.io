@@ -1,0 +1,9 @@
+@article{Liu:2014,
+  title = "{Exploiting Entity Relationship for Query Expansion in Enterprise Search}",
+  author = {Liu, Xitong and Chen, Fei and Fang, Hui and Wang, Min},
+  journal = {Information Retrieval},
+  volume={17},
+  number={3},
+  pages={265--294},
+  year = {2014},
+}

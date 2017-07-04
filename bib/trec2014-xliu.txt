@@ -1,0 +1,6 @@
+@inproceedings{Liu:2014,
+  title = "{Entity Came to Rescue - Leveraging Entities to Minimize Risks in Web Search}",
+  author = {Xitong Liu and Peilin Yang and Hui Fang},
+  booktitle = {TREC},
+  year = {2014},
+}

@@ -1,0 +1,6 @@
+@inproceedings{Liu-Bias:2015,
+  title = "{Towards Less Biased Web Search}",
+  author = {Liu, Xitong and Fang, Hui and Cai, Deng},
+  booktitle = {ICTIR},
+  year = {2015},
+}
